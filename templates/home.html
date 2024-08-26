@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Analysis Project</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffcccb;
+        }
+
+        /* Body Section Styles */
+        .body-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f7f7f7;
+        }
+
+        .body-section .intro {
+            margin-bottom: 30px;
+        }
+
+        .body-section .intro h1 {
+            font-size: 36px;
+            animation: fadeInDown 2s ease-in-out;
+        }
+
+        .body-section .intro p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .body-section .intro-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .body-section .buttons .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #ff0000;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .body-section .buttons .btn:hover {
+            background-color: #d40000;
+            transform: scale(1.05);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Contact Us Form Styles */
+        .contact-section {
+            background-color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-section input, .contact-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .contact-section button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .contact-section button:hover {
+            background-color: #d40000;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .sub-footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .sub-footer a {
+            color: #ffcccb;
+            margin: 0 5px;
+        }
+
+        .sub-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header nav ul li {
+                margin-bottom: 10px;
+            }
+
+            .body-section .intro h1 {
+                font-size: 28px;
+            }
+
+            .body-section .intro p {
+                font-size: 16px;
+            }
+
+            .contact-section form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">YT Analysis</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#analytics">YouTube Analytics</a></li>
+                <li><a href="#predictor">Like Predictor</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Body Section -->
+    <section class="body-section" id="home">
+        <div class="intro">
+            <h1>Welcome to YouTube Analysis</h1>
+            <p>Your ultimate tool for analyzing and predicting video success on YouTube.</p>
+            <img src="https://via.placeholder.com/600x400" alt="YouTube Analysis Image" class="intro-img">
+        </div>
+        <div class="buttons">
+            <a href="#home" class="btn">Home</a>
+            <a href="#analytics" class="btn">YouTube Analytics</a>
+            <a href="#predictor" class="btn">Like Predictor</a>
+        </div>
+    </section>
+
+    <!-- Contact Us Form -->
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 YouTube Analysis. All rights reserved.</p>
+    </footer>
+
+    <!-- Sub-Footer Section -->
+    <div class="sub-footer">
+        <!-- <p>Follow us on <a href="#">Twitter</a> | <a href="#">Facebook</a> | <a href="#">Instagram</a></p> -->
+         <p>Design & Developed by Yash </p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example: Adding a click event listener to the Home button
+            const homeButton = document.querySelector('.btn[href="#home"]');
+            homeButton.addEventListener('click', function() {
+                alert('Welcome to the Home section!');
+            });
+
+            // Example: Smooth scroll for navigation links
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
