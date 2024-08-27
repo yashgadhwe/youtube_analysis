@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Analysis Project</title>
+    <title>Contact Us - YouTube Analysis</title>
     <style>
         /* Global Styles */
         body {
@@ -101,68 +101,28 @@
             outline: none;
         }
 
-        /* Body Section Styles */
-        .body-section {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: inherit;
-            color: inherit;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .body-section .intro {
-            margin-bottom: 30px;
-        }
-
-        .body-section .intro h1 {
-            font-size: 36px;
-            animation: fadeInDown 2s ease-in-out;
-        }
-
-        .body-section .intro p {
-            font-size: 18px;
-            color: inherit;
-            margin-bottom: 20px;
-            animation: fadeInUp 2s ease-in-out;
-        }
-
-        .body-section .intro-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .body-section .buttons .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #ff0000;
+        /* Hero Image Section */
+        .hero-image {
+            position: relative;
+            background-image: url('https://via.placeholder.com/1920x400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
             color: white;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: transform 0.3s, background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
-        .body-section .buttons .btn:hover {
-            background-color: #d40000;
-            transform: scale(1.05);
+        .hero-image h1 {
+            font-size: 48px;
+            margin: 0;
         }
 
-        /* Keyframe Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInDown {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        .hero-image p {
+            font-size: 24px;
+            margin: 10px 0 0;
         }
 
         /* Contact Us Form Styles */
@@ -212,6 +172,7 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .contact-section button:hover {
@@ -275,12 +236,12 @@
                 margin-bottom: 10px;
             }
 
-            .body-section .intro h1 {
-                font-size: 28px;
+            .hero-image h1 {
+                font-size: 36px;
             }
 
-            .body-section .intro p {
-                font-size: 16px;
+            .hero-image p {
+                font-size: 18px;
             }
 
             .contact-section form {
@@ -297,80 +258,47 @@
         <nav>
             <ul>
                 <li><a href="home">Home</a></li>
-                <li><a href="#analytics">YouTube Analytics</a></li>
-                <li><a href="likepredict">Like Predictor</a></li>
+                <li><a href="">YouTube Analytics</a></li>
+                <li><a href="">Like Predictor</a></li>
                 <li><a href="contact">Contact Us</a></li>
             </ul>
         </nav>
-        <button class="theme-toggle-btn">Toggle Theme</button>
     </header>
 
-    <!-- Body Section -->
-    <section class="body-section" id="home">
-        <div class="intro">
-            <h1>Welcome to YouTube Analysis</h1>
-            <p>Your ultimate tool for analyzing and predicting video success on YouTube.</p>
-            <img src="https://qph.cf2.quoracdn.net/main-qimg-e3864bf7609a1d0221d64e8a3a523658-lq" alt="YouTube Analysis Image" class="intro-img">
-        </div>
-        <div class="buttons">
-            <a href="#home" class="btn">Home</a>
-            <a href="#analytics" class="btn">YouTube Analytics</a>
-            <a href="#predictor" class="btn">Like Predictor</a>
+    <!-- Hero Image Section -->
+    <section class="hero-image">
+        <div>
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you!</p>
         </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section class="contact-section" id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <section class="contact-section">
+        <h2>Get in Touch</h2>
+        <form action="/contact" method="post">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="914 5687 346">
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required placeholder="yourname@gmail.com">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Enter your Address">
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="Enter the Message"></textarea>
 
             <button type="submit">Submit</button>
         </form>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
+     <!-- Footer Section -->
+     <footer>
         <p>© 2024 YouTube Analysis. All rights reserved.</p>
     </footer>
-
-    <!-- Sub-footer Section -->
-    <div class="sub-footer">
-        <p>Follow us on:
-            <a href="#">Facebook</a> |
-            <a href="#">Twitter</a> |
-            <a href="#">Instagram</a>
-        </p>
-    </div>
-
-    <!-- Theme Switch Button at Bottom Right -->
-    <button class="theme-switch-btn" id="bottomThemeSwitch">☀️</button>
-
-    <script>
-        // Function to toggle between light and dark theme
-        function toggleTheme() {
-            document.body.classList.toggle('dark-theme');
-            document.body.classList.toggle('light-theme');
-        }
-
-        // Event listener for theme toggle button in navbar
-        document.querySelector('.theme-toggle-btn').addEventListener('click', function() {
-            toggleTheme();
-        });
-
-        // Event listener for theme switch button at bottom right
-        document.getElementById('bottomThemeSwitch').addEventListener('click', function() {
-            toggleTheme();
-            this.textContent = document.body.classList.contains('dark-theme') ? '🌙' : '☀️';
-        });
-    </script>
-
-</body>
-</html>
+</body>  
+</html> 

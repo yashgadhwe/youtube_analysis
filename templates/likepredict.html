@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Analysis Project</title>
+    <title>YouTube Like Predictor</title>
     <style>
         /* Global Styles */
         body {
@@ -101,8 +101,8 @@
             outline: none;
         }
 
-        /* Body Section Styles */
-        .body-section {
+        /* Form Section Styles */
+        .form-section {
             text-align: center;
             padding: 60px 20px;
             background-color: inherit;
@@ -110,99 +110,46 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .body-section .intro {
-            margin-bottom: 30px;
-        }
-
-        .body-section .intro h1 {
+        .form-section h2 {
             font-size: 36px;
             animation: fadeInDown 2s ease-in-out;
         }
 
-        .body-section .intro p {
+        .form-section p {
             font-size: 18px;
             color: inherit;
             margin-bottom: 20px;
             animation: fadeInUp 2s ease-in-out;
         }
 
-        .body-section .intro-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .body-section .buttons .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #ff0000;
-            color: white;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .body-section .buttons .btn:hover {
-            background-color: #d40000;
-            transform: scale(1.05);
-        }
-
-        /* Keyframe Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInDown {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Contact Us Form Styles */
-        .contact-section {
-            background-color: inherit;
-            padding: 60px 20px;
-            text-align: center;
-            color: inherit;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .contact-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .contact-section form {
+        .form-section form {
             max-width: 600px;
             margin: 0 auto;
             text-align: left;
         }
 
-        .contact-section label {
+        .form-section .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-section label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
             color: inherit;
         }
 
-        .contact-section input, .contact-section textarea {
+        .form-section input,
+        .form-section select {
             width: 100%;
             padding: 10px;
-            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
             color: #333;
         }
 
-        .contact-section button {
+        .form-section button {
             display: block;
             width: 100%;
             padding: 10px;
@@ -212,10 +159,44 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
         }
 
-        .contact-section button:hover {
+        .form-section button:hover {
             background-color: #d40000;
+            transform: scale(1.05);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* Footer Styles */
@@ -275,79 +256,101 @@
                 margin-bottom: 10px;
             }
 
-            .body-section .intro h1 {
+            .form-section h2 {
                 font-size: 28px;
             }
 
-            .body-section .intro p {
+            .form-section p {
                 font-size: 16px;
             }
 
-            .contact-section form {
+            .form-section form {
                 width: 100%;
             }
         }
     </style>
 </head>
 <body class="light-theme">
-
     <!-- Header Section -->
     <header class="light-theme">
-        <div class="logo">YT Analysis</div>
+        <div class="logo">YT Like Predictor</div>
         <nav>
             <ul>
-                <li><a href="home">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#analytics">YouTube Analytics</a></li>
-                <li><a href="likepredict">Like Predictor</a></li>
-                <li><a href="contact">Contact Us</a></li>
+                <li><a href="#predictor">Like Predictor</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
         <button class="theme-toggle-btn">Toggle Theme</button>
     </header>
 
-    <!-- Body Section -->
-    <section class="body-section" id="home">
-        <div class="intro">
-            <h1>Welcome to YouTube Analysis</h1>
-            <p>Your ultimate tool for analyzing and predicting video success on YouTube.</p>
-            <img src="https://qph.cf2.quoracdn.net/main-qimg-e3864bf7609a1d0221d64e8a3a523658-lq" alt="YouTube Analysis Image" class="intro-img">
-        </div>
-        <div class="buttons">
-            <a href="#home" class="btn">Home</a>
-            <a href="#analytics" class="btn">YouTube Analytics</a>
-            <a href="#predictor" class="btn">Like Predictor</a>
-        </div>
-    </section>
-
-    <!-- Contact Us Section -->
-    <section class="contact-section" id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Submit</button>
+    <!-- Form Section -->
+    <section class="form-section" id="predictor">
+        <h2>YouTube Like Predictor</h2>
+        <p>Enter the details to predict the number of likes for a YouTube video.</p>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="views">Views:</label>
+                <input type="number" id="views" name="views" required>
+            </div>
+            <div class="form-group">
+                <label for="dislikes">Dislikes:</label>
+                <input type="number" id="dislikes" name="dislikes" required>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comment Count:</label>
+                <input type="number" id="comments" name="comments" required>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre" required>
+                    <option value="1">Film & Animation</option>
+                    <option value="2">Autos & Vehicles</option>
+                    <option value="10">Music</option>
+                    <option value="15">Pets & Animals</option>
+                    <option value="17">Sports</option>
+                    <option value="18">Short Movies</option>
+                    <option value="19">Travel & Events</option>
+                    <option value="20">Gaming</option>
+                    <option value="21">Videoblogging</option>
+                    <option value="22">People & Blogs</option>
+                    <option value="23">Comedy</option>
+                    <option value="24">Entertainment</option>
+                    <option value="25">News & Politics</option>
+                    <option value="26">Howto & Style</option>
+                    <option value="27">Education</option>
+                    <option value="28">Science & Technology</option>
+                    <option value="29">Nonprofits & Activism</option>
+                    <option value="30">Movies</option>
+                    <option value="31">Anime/Animation</option>
+                    <option value="32">Action/Adventure</option>
+                    <option value="33">Classics</option>
+                    <option value="34">Comedy</option>
+                    <option value="35">Documentary</option>
+                    <option value="36">Drama</option>
+                    <option value="37">Family</option>
+                    <option value="38">Foreign</option>
+                    <option value="39">Horror</option>
+                    <option value="40">Sci-Fi/Fantasy</option>
+                    <option value="41">Thriller</option>
+                    <option value="42">Shorts</option>
+                    <option value="43">Shows</option>
+                    <option value="44">Trailers</option>
+                </select>
+            </div>
+            <button type="submit">Predict Likes</button>
         </form>
     </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>© 2024 YouTube Analysis. All rights reserved.</p>
+        <p>© 2024 YouTube Like Predictor. All rights reserved.</p>
     </footer>
 
     <!-- Sub-footer Section -->
     <div class="sub-footer">
-        <p>Follow us on:
-            <a href="#">Facebook</a> |
-            <a href="#">Twitter</a> |
-            <a href="#">Instagram</a>
-        </p>
+        <p>Follow us on: <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
     </div>
 
     <!-- Theme Switch Button at Bottom Right -->
@@ -371,6 +374,5 @@
             this.textContent = document.body.classList.contains('dark-theme') ? '🌙' : '☀️';
         });
     </script>
-
 </body>
 </html>
